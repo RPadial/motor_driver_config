@@ -77,6 +77,23 @@
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_R_ENABLE(X)     (bool(((X)&0x1)<<1))
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_L_ENABLE(X)     (bool(((X)&0x1)<<0))
 
+/* Encoder Configuration */
+/* ENCMODE */ 
+#define BOOL_MOTDRV_EC_ENCMODE_ENC_SEL_DECIMAL(X) (bool(((X)&0x1)<<10))
+#define BOOL_MOTDRV_EC_ENCMODE_LATCH_X_ACT(X)     (bool(((X)&0x1)<<9))
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_ENC_X(X)       (bool(((X)&0x1)<<8))
+#define BOOL_MOTDRV_EC_ENCMODE_NEG_EDGE(X)        (bool(((X)&0x1)<<7))
+#define BOOL_MOTDRV_EC_ENCMODE_POS_EDGE(X)        (bool(((X)&0x1)<<6))
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_ONCE(X)        (bool(((X)&0x1)<<5))
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_CONT(X)        (bool(((X)&0x1)<<4))
+#define BOOL_MOTDRV_EC_ENCMODE_IGNORE_AB(X)       (bool(((X)&0x1)<<3))
+#define BOOL_MOTDRV_EC_ENCMODE_POL_N(X)           (bool(((X)&0x1)<<2))
+#define BOOL_MOTDRV_EC_ENCMODE_POL_B(X)           (bool(((X)&0x1)<<1))
+#define BOOL_MOTDRV_EC_ENCMODE_POL_A(X)           (bool(((X)&0x1)<<0))
+
+#define U32_MOTDRV_EC_X_ENC(X)                    (uint32_t(X))
+#define U32_MOTDRV_EC_ENC_CONST(X)                (uint32_t(X))
+
 
 /**********************************************************/
 /*                    DEFAULT VALUES                      */
@@ -146,6 +163,24 @@
 #define BOOL_MOTDRV_RGC_SW_MODE_POL_STOP_L_DEF       (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_R_ENABLE_DEF    (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_L_ENABLE_DEF    (false)
+
+/* Encoder Configuration */
+/* ENCMODE */ 
+#define BOOL_MOTDRV_EC_ENCMODE_ENC_SEL_DECIMAL_DEF  (false)
+#define BOOL_MOTDRV_EC_ENCMODE_LATCH_X_ACT_DEF      (false)
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_ENC_X_DEF        (false)
+#define BOOL_MOTDRV_EC_ENCMODE_NEG_EDGE_DEF         (false)
+#define BOOL_MOTDRV_EC_ENCMODE_POS_EDGE_DEF         (false)
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_ONCE_DEF         (false)
+#define BOOL_MOTDRV_EC_ENCMODE_CLR_CONT_DEF         (false)
+#define BOOL_MOTDRV_EC_ENCMODE_IGNORE_AB_DEF        (false)
+#define BOOL_MOTDRV_EC_ENCMODE_POL_N_DEF            (false)
+#define BOOL_MOTDRV_EC_ENCMODE_POL_B_DEF            (false)
+#define BOOL_MOTDRV_EC_ENCMODE_POL_A_DEF            (false)
+
+#define U32_MOTDRV_EC_X_ENC_DEF                     (0x0)
+#define U32_MOTDRV_EC_ENC_CONST_DEF                 (0x0)
+
 
 
 /**********************************************************/

@@ -94,7 +94,26 @@ void motdrv_rampGenConf(uint8_t CS)
    com_write(XTARGET, U32_MOTDRV_RGC_XTARGET(U32_MOTDRV_RGC_XTARGET_DEF), CS);
    com_write(VDCMIN, U32_MOTDRV_RGC_VDCMIN(U32_MOTDRV_RGC_VDCMIN_DEF), CS);
    com_write(SW_MODE, u16_sw_mode, CS);
-   
+}
+
+void motdrv_encConf(uint8_t CS)
+{
+  uint16_t u16_encmode = 0;
+  u16_encmode = (BOOL_MOTDRV_EC_ENCMODE_ENC_SEL_DECIMAL(BOOL_MOTDRV_EC_ENCMODE_ENC_SEL_DECIMAL_DEF) \
+                 | BOOL_MOTDRV_EC_ENCMODE_LATCH_X_ACT(BOOL_MOTDRV_EC_ENCMODE_LATCH_X_ACT_DEF) \ 
+                 | BOOL_MOTDRV_EC_ENCMODE_CLR_ENC_X(BOOL_MOTDRV_EC_ENCMODE_CLR_ENC_X_DEF) \
+                 | BOOL_MOTDRV_EC_ENCMODE_NEG_EDGE(BOOL_MOTDRV_EC_ENCMODE_NEG_EDGE_DEF) \  
+                 | BOOL_MOTDRV_EC_ENCMODE_POS_EDGE(BOOL_MOTDRV_EC_ENCMODE_POS_EDGE_DEF) \
+                 | BOOL_MOTDRV_EC_ENCMODE_CLR_ONCE(BOOL_MOTDRV_EC_ENCMODE_CLR_ONCE_DEF) \  
+                 | BOOL_MOTDRV_EC_ENCMODE_CLR_CONT(BOOL_MOTDRV_EC_ENCMODE_CLR_CONT_DEF) \
+                 | BOOL_MOTDRV_EC_ENCMODE_IGNORE_AB(BOOL_MOTDRV_EC_ENCMODE_IGNORE_AB_DEF) \  
+                 | BOOL_MOTDRV_EC_ENCMODE_POL_N(BOOL_MOTDRV_EC_ENCMODE_POL_N_DEF) \  
+                 | BOOL_MOTDRV_EC_ENCMODE_POL_B(BOOL_MOTDRV_EC_ENCMODE_POL_B_DEF) \   
+                 | BOOL_MOTDRV_EC_ENCMODE_POL_A(BOOL_MOTDRV_EC_ENCMODE_POL_A_DEF)   
+                );
+   com_write(X_ENC, U32_MOTDRV_EC_X_ENC(U32_MOTDRV_EC_X_ENC_DEF), CS);
+   com_write(ENC_CONST, U32_MOTDRV_EC_ENC_CONST(U32_MOTDRV_EC_ENC_CONST_DEF), CS);
+   com_write(ENCMODE, u16_encmode, CS);
 }
 
 /**********************************************************/
@@ -111,6 +130,7 @@ void motdrv_init()
   /* RAMP Generator Config */
   motdrv_rampGenConf(SPI_CS);
   /* Encoder Config */
+  motdrv_encConf(SPI_CS);
   /* Microstepping Control Config */
   /* CHOPCONF */
   /* COOLCONF */
