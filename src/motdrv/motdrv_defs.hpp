@@ -133,7 +133,7 @@
 #define U16_MOTDRV_RGC_TZEROWAIT_DEF               (0x0)
 #define U32_MOTDRV_RGC_XTARGET_DEF                 (0x0)
 #define U32_MOTDRV_RGC_VDCMIN_DEF                  ((0x0)&0x007FFFFF)
-// #define U16_MOTDRV_RGC_SW_MODE_DEF                 ((0x0)&0x07FF)
+/* SW_MODE_DEF */
 #define BOOL_MOTDRV_RGC_SW_MODE_EN_SOFTSTOP_DEF      (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_SG_STOP_DEF          (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_EN_LATCHENCODER_DEF  (false)
@@ -146,11 +146,6 @@
 #define BOOL_MOTDRV_RGC_SW_MODE_POL_STOP_L_DEF       (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_R_ENABLE_DEF    (false)
 #define BOOL_MOTDRV_RGC_SW_MODE_STOP_L_ENABLE_DEF    (false)
-
-// #define U16_MOTDRV_RGC_RAMP_STAT_DEF               ((0x0)&0x3FFF)
-#define U32_MOTDRV_RGC_XLATCH_DEF                  (0x0)
-
-
 
 
 /**********************************************************/
